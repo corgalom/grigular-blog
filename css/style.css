@@ -1,0 +1,254 @@
+html, body {
+	height: 100%;
+}
+
+* {
+	font-family: "Times New Roman", Georgia, Serif;
+}
+
+a:visited {
+	color: #242;
+}
+
+a:link {
+	color: #44A;
+}
+
+.main-font {
+	font-size: 20px;
+}
+
+.paper-background {
+	background-color: #FFF;
+}
+
+.black-background {
+	background-color: #333;
+}
+
+.petya-background {
+	background: url('../images/header-background.jpg') repeat-x;
+}
+
+.petya-background-night {
+	background: url('../images/header-background_night.jpg') repeat-x;
+}
+
+.white-text {
+	color: #FFF;
+	text-shadow: 2px 2px #444;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.limited-size { 
+	max-height:90vh; 
+}
+
+.limited-width {
+	max-width:90vw;
+}
+
+.top-25 {
+	margin-top: 25px
+}
+
+.bottom-15 {
+	margin-bottom: 15px;
+}
+
+.padding-bottom-25 {
+	padding-bottom: 25px;
+}
+
+.padding-bottom-200 {
+	padding-bottom: 200px;
+}
+
+.margin-top-25 {
+	margin-top: 25px;
+}
+
+.image-rounded-corners {
+	border-radius: 8px;
+}
+
+.image-caption {
+	padding: 10px;
+	padding-bottom: 15px;
+	width: 100%;
+}
+
+.one-note {
+	padding: 10px;
+	width: 100%;
+	border-bottom: dashed;
+	border-bottom-color: #E64;
+}
+
+.note-block {
+	border-left: dashed 1px;
+	border-color: #64E;
+}
+
+.clickable:hover {
+	cursor: pointer;
+}
+
+.modal-dialog {
+	margin-left: 5vw !important;
+	margin-right: 5vw !important;
+	margin-top: 5vh !important;
+	margin-bottom: 5vh !important;
+	width: 90vw !important;
+}
+
+.modal-content {
+	border: none !important;
+	box-shadow: rgba(0,0,0,0) !important;
+	background-color: rgba(0,0,0,0);
+	max-width: 90vw;
+}
+
+.caption-width {
+	margin-bottom: 0px !important;
+	max-width: 90vw;
+}
+
+.right-top {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.shadow {
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .3);
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.ajax-link {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	color: #44A;
+}
+
+.ajax-link:hover {
+	cursor: pointer;
+}
+
+.ajax-link:active {
+	color: #99F;
+}
+
+a:active {
+	color: #99F;
+}
+
+a.footer-link {
+	color: #CCC;
+}
+
+.header-background {
+	background: url('../images/seattle.png') repeat-x right bottom;
+}
+
+.image-thumb {
+	padding: 10px;
+	float: left;
+	border-radius: 5px;
+}
+
+.width-250 {
+	width: 250px;
+}
+
+.height-250 {
+	height: 250px;
+}
+
+.height-200 {
+	height: 200px;
+}
+
+.height-25 {
+	height: 25px;
+}
+
+.height-header {
+	height: 186px;
+}
+
+.height-footer {
+	min-height: 48px;
+	height: auto;
+}
+
+.youtube {
+	width: 50vw; 
+    height: 28.125vw;
+}
+
+.text-footer {
+	font-size: 18px;
+	line-height: 38px;
+}
+
+hr { 
+	 border: 0; 
+	 height: 1px; 
+	 background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@keyframes petyan-ride {
+	0% {background-position: left center}
+	95% {background-position: right center}
+	100% {background-position: left center}
+}
+
+@keyframes izba-dance {
+	0% {height: 186px; width: 186px}
+	25% {height: 98px; width: 284px}
+	50% {height: 186px; width: 186px}
+	75% {height: 186px; width: 98px}
+	100% {height: 186px; width: 186px}
+}
+
+.header-petyan {
+	position: absolute;
+	width: 100%;
+	animation-name: petyan-ride;
+	animation-duration: 50s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in;
+}
+
+.background-traktor {
+	background: url('../images/petyan.png') no-repeat left center;
+}
+
+.background-traktor-night {
+	background: url('../images/petyan_night.png') no-repeat left center;
+}
+
+.header-izba {
+	position: absolute;
+	left: 0px;
+}
+
+.header-kolbasa {
+	position: absolute;
+	right: 5px;
+}
+
+.header-shadow {
+	box-shadow: 5px 0px 10px black;
+}

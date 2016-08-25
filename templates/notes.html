@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<nav>
+		<ul class="pagination">
+			<li ng-class="{'disabled': notesCommon.currentPage == 1}" class="clickable" ng-click="selectPage(notesCommon.currentPage-1)"><span aria-hidden="true">Назад</span></li>
+			<li ng-repeat="page in notesCommon.pages" ng-class="{'active': notesCommon.currentPage == page, 'clickable': notesCommon.currentPage != page}" ng-click="selectPage(page)"><span aria-hidden="true">{{page}}</span></li>
+			<li ng-class="{'disabled': notesCommon.currentPage == notesCommon.pages.length}" class="clickable" ng-click="selectPage(notesCommon.currentPage+1)"><span aria-hidden="true">Вперед</span></li>
+		</ul>
+	</nav>
+	<div ng-repeat="note in notes" class="one-note">
+		<h2><a ng-href="{{'#/notes/:' + note.id}}">{{note.title}}</a></h2> - {{note.created | date:'longDate'}}
+		<hr />
+		<div ng-repeat="block in note.paragraphs | limitTo: note.opened?note.paragraphs.length:note.previewLength" ng-class="{'image-caption': block.type==='caption', 'shadow': block.type==='caption'}" class="padding-top-25 bottom-15 paper-background">
+			<img ng-if="block.type === 'image' || block.type === 'caption'" ng-src="{{block.content}}" class="img-responsive padding-bottom-25 image-rounded-corners clickable limited-size" ng-click="openImage(block.content, block.text)"/>
+			<span ng-if="block.type === 'text'" class="main-font">{{block.content}}</span>
+			<span ng-if="block.type === 'caption'" class="main-font">{{block.text}}</span>
+			<div ng-if="block.type === 'custom'" class="main-font" ng-bind-html="getTrustedResource(block.content)"></div>
+		</div>
+		<div class="top-25">
+			<span class="main-font ajax-link" ng-click="note.opened=!note.opened" ng-if="note.previewLength<note.paragraphs.length">{{note.opened?"Свернуть":"Раскрыть"}} запись</span>
+		</div>
+	</div>
+	<nav>
+		<ul class="pagination">
+			<span class="list-group-item"><b>Всего записей: {{notesCommon.total}}<br>Последняя запись от {{notesCommon.lastNote | date:'longDate'}}</b></span>
+			<li ng-class="{'disabled': notesCommon.currentPage == 1}" class="clickable" ng-click="selectPage(notesCommon.currentPage-1)"><span aria-hidden="true">Назад</span></li>
+			<li ng-repeat="page in notesCommon.pages" ng-class="{'active': notesCommon.currentPage == page, 'clickable': notesCommon.currentPage != page}" ng-click="selectPage(page)"><span aria-hidden="true">{{page}}</span></li>
+			<li ng-class="{'disabled': notesCommon.currentPage == notesCommon.pages.length}" class="clickable" ng-click="selectPage(notesCommon.currentPage+1)"><span aria-hidden="true">Вперед</span></li>
+		</ul>
+	</nav>
+</div>

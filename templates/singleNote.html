@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="full-width top-25 height-25">
+		<a class="float-left main-font" ng-href="{{'#/notes/:' + neighbors.earlier.id}}" ng-if="neighbors.earlier"><< {{neighbors.earlier.title}} от {{neighbors.earlier.created | date:'longDate'}}</a>
+		<a class="float-right  main-font" ng-href="{{'#/notes/:' + neighbors.later.id}}" ng-if="neighbors.later">{{neighbors.later.title}} от {{neighbors.later.created | date:'longDate'}} >></a>
+	</div>
+	<h2>{{note.title}}</h2> - {{note.created | date:'longDate'}}
+	<br/>
+	<a href="/#/">На главную</a>
+	<hr />
+	<div ng-repeat="block in note.paragraphs" ng-class="{'image-caption': block.type==='caption', 'shadow': block.type==='caption'}" class="padding-top-25 bottom-15 paper-background">
+		<img ng-if="block.type === 'image' || block.type === 'caption'" ng-src="{{block.content}}" class="img-responsive padding-bottom-25 image-rounded-corners clickable limited-size" ng-click="openImage(block.content, block.text)"/>
+		<span ng-if="block.type === 'text'" class="main-font">{{block.content}}</span>
+		<span ng-if="block.type === 'caption'" class="main-font">{{block.text}}</span>
+		<div ng-if="block.type === 'custom'" class="main-font" ng-bind-html="getTrustedResource(block.content)"></div>
+	</div>
+</div>

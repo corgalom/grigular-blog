@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Alex Grigoryev's blog">
+		<meta name="author" content="Alex Grigoryev">
+		<title>Blog</title>
+		<!-- CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- libs js -->
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-sanitize.min.js"></script>
+		<script src="lib/angular-route.min.js"></script>
+		<script src="lib/angular-locale_ru-ru.js"></script>
+		<script src="lib/ui-bootstrap-tpls-1.3.2.min.js"></script>
+
+		<!-- app js -->
+		<script src="js/app.js"></script>
+		<script src="js/data.js"></script>
+	</head>
+	<body ng-app="blog-grigular" class="paper-background">
+		<div class="container-fluid" style="height: 100%" ng-controller="NavCtrl">
+			<!--header-->
+			<div class="row height-header header-shadow" ng-class="{'petya-background': commonData.currentDaytime==='day', 'petya-background-night': commonData.currentDaytime==='night'}">
+				<div class="header-petyan height-header hidden-xs" ng-class="{'background-traktor': commonData.currentDaytime==='day', 'background-traktor-night': commonData.currentDaytime==='night'}"></div>
+				<div class="col-xs-1 hidden-xs col-md-2">
+					<img src="images/izba.png" class="header-izba height-header">
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<h2 class="text-center white-text">Туда и не обратно</h1>
+					<h3 class="text-center white-text" >Повесть о поросенке Саше</h1>
+				</div>
+				<div class="col-xs-6  col-md-4">
+					<h3 class="text-center white-text">{{commonData.nav_date}} в США</h3>
+				</div>
+				<div class="col-xs-1 hidden-xs col-md-2">
+					<img src="images/kolbasa.png" class="header-kolbasa height-header">
+				</div>
+			</div>
+			<!--/header-->
+			
+			<!--content-->
+			<div class="row header-background padding-bottom-200">
+				<div class="col-md-3 hidden-xs margin-top-25">
+					<div class="list-group">
+						<span class="list-group-item"><b>Обо мне</b></span>
+						<button type="button" class="list-group-item disabled">Бег</button>
+						<button type="button" class="list-group-item disabled">RC проекты</button>
+						<button type="button" class="list-group-item disabled">Путешествия</button>
+						<button type="button" class="list-group-item disabled">IT проекты</button>
+					</div>
+				</div>
+				<div class="col-md-8 col-xs-12 note-block" ng-view></div>
+				<div class="hidden-xs col-md-1"></div>
+			</div>
+			<!--/content-->
+			
+			<!--footer-->
+			<div class="row black-background height-footer">
+				<div class="col-xs-1 hidden-xs col-md-2">
+					<span></span>
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<p class="text-center white-text text-footer">Туда и не обратно, 2015-2016</p>
+				</div>
+				<div class="col-xs-6  col-md-4">
+					<p class="white-text text-footer"><a href="mailto:info@grigular.com" class="footer-link">info@grigular.com</a></p>
+				</div>
+				<div class="col-xs-1 hidden-xs col-md-2">
+					<span></span>
+				</div>
+			</div>
+			<!--/footer-->
+		</div>
+	</body>
+</html>
